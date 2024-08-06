@@ -13,7 +13,7 @@ import Nav3 from "@/components/common/Nav/nav3";
 
 let erc20ContractAddress = "";
 let stakingContractAddress = "";
-let provider: ethers.providers.Web3Provider | null = null;
+let provider = (ethers as any).providers.Web3Provider;
 let signer = null;
 let erc20Contract: ethers.Contract;
 let stakingContract: ethers.Contract;
@@ -38,7 +38,7 @@ const Crowdfunding = () => {
     stakingContractAddress = "0x2D47f97caE66f5D1582750790F36F57D29A571EA";
 
     if (typeof window !== "undefined" && (window as any).ethereum) {
-      provider = new ethers.providers.Web3Provider((window as any).ethereum);
+      provider = new (ethers as any).providers.Web3Provider((window as any).ethereum);
       const signer = provider.getSigner();
       console.log("done");
       setIsLoading(false);
@@ -72,10 +72,10 @@ const Crowdfunding = () => {
     async function fetchData() {
       try {
         const price = await stakingContract.salePrice();
-        setSalePrice(ethers.utils.formatEther(price));
+        setSalePrice((ethers as any).utils.formatEther(price));
         console.log(price);
         const goal = await stakingContract.crowdFundingGoal();
-        setCrowdFundingGoal(ethers.utils.formatEther(goal));
+        setCrowdFundingGoal((ethers as any).utils.formatEther(goal));
 
         const totalSupply = await stakingContract.totalSupply();
         const nftFunding = totalSupply.mul(price);
@@ -84,12 +84,12 @@ const Crowdfunding = () => {
 
         if (isCreatorAlreadyStaked) {
           const stakedAmount = goal
-            .mul(ethers.BigNumber.from("20"))
-            .div(ethers.BigNumber.from("100"));
+            .mul((ethers as any).BigNumber.from("20"))
+            .div((ethers as any).BigNumber.from("100"));
           total = total.add(stakedAmount);
         }
 
-        setTotalFunding(ethers.utils.formatEther(total));
+        setTotalFunding((ethers as any).utils.formatEther(total));
       } catch (error: any) {
         console.error("Error fetching data:", error.message);
       }

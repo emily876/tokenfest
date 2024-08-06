@@ -20,7 +20,7 @@ const Page = () => {
                 const contractAddress = "YOUR_CONTRACT_ADDRESS";
 
                 // Setup a provider (Here, we're using a default provider for the Ethereum mainnet)
-                const provider = new ethers.providers.JsonRpcProvider("https://mainnet.infura.io/v3/YOUR_INFURA_API_KEY");
+                const provider = new (ethers as any).providers.JsonRpcProvider("https://mainnet.infura.io/v3/YOUR_INFURA_API_KEY");
 
                 // Connect to the contract
                 const contract = new ethers.Contract(contractAddress, contractABI, provider);
@@ -38,7 +38,7 @@ const Page = () => {
     useEffect(() => {
         async function getNetwork() {
             try {
-                const provider = new ethers.providers.Web3Provider((window as any).ethereum);
+                const provider = new (ethers as any).providers.Web3Provider(window.ethereum);
                 const network = await provider.getNetwork();
                 setConnectedNetwork(network.chainId);
             } catch (error) {
@@ -46,7 +46,7 @@ const Page = () => {
             }
         }
 
-        if ((window as any).ethereum) {
+        if (window.ethereum) {
             getNetwork();
         }
     }, []);
