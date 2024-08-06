@@ -60,6 +60,10 @@ const CreateProposal = () => {
       initialValues={initialValues}
       onSubmit={(values, actions) => {
         setProposal(values);
+
+        // Save values to localStorage
+        localStorage.setItem('eventdata', JSON.stringify(values));
+
         enqueueSnackbar(`${values.title} has been created`, {
           variant: "success",
         });

@@ -46,14 +46,14 @@ const [isHovered, setIsHovered] = useState(false);
             </div>
           )}
         </div>
-        <div className='flex flex-wrap mx-8 gap-6 my-4'>
-          <div className='h-[400px] w-full sm:w-[350px] p-6 bg-[#BDE3F0]'>
+        <div className='flex flex-wrap mx-8 gap-6 mt-4 mb-10'>
+          <Link href="/events/info" className='h-[400px] w-full sm:w-[350px] p-6 bg-[#BDE3F0] '>
             <div className='bg-cover bg-center h-[260px] w-full' style={{ backgroundImage: `url('/startedevents.png')` }}>
             </div>
             <h1 className='text-black font-Raleway text-2xl font-semibold leading-normal capitalize py-4'>
               NFT Details
             </h1>
-          </div>
+          </Link>
         </div>
 
         <Link 
@@ -83,6 +83,7 @@ const [isHovered, setIsHovered] = useState(false);
         boxShadow: '0px 4px 8px rgba(0, 0, 0, 0.1)',
         zIndex: 20,
         width: '300px',
+        marginLeft: '50px'
       }}
     >
       <div className="font-bold">I want to create phygital merchandise with MyriadFlow</div>
