@@ -64,7 +64,7 @@ const Ongoing = () => {
             <div className="text-white">{proposal.venue}</div>
             <div className="text-white">{proposal.description}</div>
             <div className="text-white">Price Per NFT: {proposal.priceperNFT} USDC</div>
-            <div className="text-white">Funding Goal: {proposal.funding_goal} USDC</div>
+            {/* <div className="text-white">Funding Goal: {proposal.funding_goal} USDC</div> */}
             <div className="text-white">Valid Till: {proposal.date.$d.toDateString()}</div>
             <div className="text-white">Created by: {userAddress}</div>
 

@@ -41,7 +41,7 @@ const ConvertModal = () => {
         title: proposal.title,
         description: proposal.description,
         priceperNFT: proposal.priceperNFT,
-        funding_goal: proposal.funding_goal,
+        // funding_goal: proposal.funding_goal,
         stable_coin_option: "USDC",
         starting_date: "",
         ending_date: "",
