@@ -20,7 +20,7 @@ interface FormMessage {
   title: string;
   description: string;
   priceperNFT: number;
-  funding_goal: number;
+  // funding_goal: number;
   stable_coin_option: string;
   starting_date: string;
   ending_date: string;
@@ -50,7 +50,7 @@ const ConvertModal = () => {
         title: "",
         description: "",
         priceperNFT: 0,
-        funding_goal: 0,
+        // funding_goal: 0,
         stable_coin_option: "",
         starting_date: "",
         ending_date: "",
@@ -198,10 +198,10 @@ try {
                 <div className="text-lg font-medium ">{values.title}</div>
                 <div>{values.description}</div>
                 <div>Price Per NFT: {values.priceperNFT}</div>
-                <div>
+                {/* <div>
                   Funding Goal: {values.funding_goal}{" "}
                   {values.stable_coin_option}
-                </div>
+                </div> */}
                 <div>
                   <label htmlFor="stable_coin_option" className="block mb-2">
                     StableCoin for the funding :

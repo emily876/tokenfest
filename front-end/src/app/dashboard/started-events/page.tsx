@@ -7,10 +7,10 @@ const [showPayNow, setShowPayNow] = useState(false);
   return (
     <div>
       <DashboardNav />
-      <div className='min-h-[630px] bg-[#BDE3F0]'>
+      <div className='min-h-[630px] bg-white'>
         <h1 className='p-6 text-black text-2xl mb-1 font-Raleway'>Started Events</h1>
         <div className='flex flex-wrap mx-8 gap-6 my-4'>
-          <button className='inline-flex px-6 py-3 rounded-full bg-amber-400 text-black text-center font-Raleway text-base font-medium capitalize'>
+          <button className='inline-flex px-6 py-3 rounded-full bg-[#BDE3F0] text-black text-center font-Raleway text-base font-medium capitalize'>
             Your Events
           </button>
           {!showPayNow && (
@@ -45,7 +45,7 @@ const [showPayNow, setShowPayNow] = useState(false);
           )}
         </div>
         <div className='flex flex-wrap mx-8 gap-6 my-4'>
-          <div className='h-[400px] w-full sm:w-[350px] p-6 bg-amber-400'>
+          <div className='h-[400px] w-full sm:w-[350px] p-6 bg-[#BDE3F0]'>
             <div className='bg-cover bg-center h-[260px] w-full' style={{ backgroundImage: `url('/startedevents.png')` }}>
             </div>
             <h1 className='text-black font-Raleway text-2xl font-semibold leading-normal capitalize py-4'>
