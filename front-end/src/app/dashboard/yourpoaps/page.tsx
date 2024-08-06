@@ -38,7 +38,7 @@ const Page = () => {
     useEffect(() => {
         async function getNetwork() {
             try {
-                const provider = new ethers.providers.Web3Provider(window.ethereum);
+                const provider = new ethers.providers.Web3Provider((window as any).ethereum);
                 const network = await provider.getNetwork();
                 setConnectedNetwork(network.chainId);
             } catch (error) {
@@ -46,7 +46,7 @@ const Page = () => {
             }
         }
 
-        if (window.ethereum) {
+        if ((window as any).ethereum) {
             getNetwork();
         }
     }, []);

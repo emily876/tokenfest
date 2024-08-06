@@ -1,9 +1,11 @@
 "use client"
 import DashboardNav from '@/components/common/Nav/dashboardnav'
 import React, { useState } from 'react'
+import Link from 'next/link'
 
 const page = () => {
 const [showPayNow, setShowPayNow] = useState(false);
+const [isHovered, setIsHovered] = useState(false);
   return (
     <div>
       <DashboardNav />
@@ -53,6 +55,42 @@ const [showPayNow, setShowPayNow] = useState(false);
             </h1>
           </div>
         </div>
+
+        <Link 
+  href="https://studio.myriadflow.com/" 
+  target="_blank" 
+  rel="noopener"
+  className="bg-[#0F4C81] rounded-full px-10 py-4 text-white mx-10 relative"
+  onMouseEnter={() => setIsHovered(true)}
+  onMouseLeave={() => setIsHovered(false)}
+>
+  Create Phygital Merch
+
+  {isHovered && (
+    <div
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+      style={{
+        position: 'absolute',
+        top: '50%', // Adjust position based on your design
+        left: '100%',
+        transform: 'translateY(-50%)', // Center the tooltip vertically
+        color: 'black',
+        background: 'white',
+        padding: '20px',
+        border: '1px solid #ddd',
+        borderRadius: '15px',
+        boxShadow: '0px 4px 8px rgba(0, 0, 0, 0.1)',
+        zIndex: 20,
+        width: '300px',
+      }}
+    >
+      <div className="font-bold">I want to create phygital merchandise with MyriadFlow</div>
+    </div>
+  )}
+</Link>
+
+
       </div>
     </div>
   )

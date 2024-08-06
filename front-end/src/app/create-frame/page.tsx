@@ -46,6 +46,7 @@ const CreateCombined = () => {
 
   interface FormMessage {
     description: string;
+    venue: string;
     title: string;
     priceperNFT: number;
     funding_goal: number;
@@ -56,6 +57,7 @@ const CreateCombined = () => {
   const initialValues: FormMessage = {
     title: "",
     description: "",
+    venue: "",
     priceperNFT: 1,
     funding_goal: 20,
     proposal_type: "",
